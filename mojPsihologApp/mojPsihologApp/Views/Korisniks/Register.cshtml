@@ -6,8 +6,6 @@
 
 <h1>Register</h1>
 
-<h4>Korisnik</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Register">
@@ -26,23 +24,12 @@
                 <label asp-for="Prezime" class="control-label"></label>
                 <input asp-for="Prezime" class="form-control" />
                 <span asp-validation-for="Prezime" class="text-danger"></span>
-            </div>
-     <!--       <div class="form-group">
-                <label asp-for="Uloga" class="control-label"></label>
-                <input asp-for="Uloga" class="form-control" />
-                <span asp-validation-for="Uloga" class="text-danger"></span>
-            </div>
-            -->
-            
-            
+            </div>            
             <div class="form-group">
                 <label asp-for="Uloga" class="control-label"></label>
                 <select asp-for="Uloga" class="form-control" asp-items="ViewBag.uloga"></select>
                 <span asp-validation-for="Uloga" class="text-danger"></span>
             </div>
-
-
-
             <div class="form-group">
                 <label asp-for="Telefon" class="control-label"></label>
                 <input asp-for="Telefon" class="form-control" />
@@ -69,14 +56,10 @@
                 <span asp-validation-for="Grad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Register" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

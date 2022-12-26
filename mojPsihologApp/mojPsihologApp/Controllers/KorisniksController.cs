@@ -23,8 +23,9 @@ namespace mojPsihologApp.Controllers
         // GET: Korisniks
         public async Task<IActionResult> Index()
         {
-            ViewBag.korisnickoime = HttpContext.Session.GetString("korisnickoime");
-            return View(await _context.Korisniks.ToListAsync());
+            var korisnickoime = HttpContext.Session.GetString("korisnickoime");
+            ViewBag.korisnickoime = korisnickoime;
+            return View(await _context.Korisniks.Where(k=>k.Korisnickoime == korisnickoime ).ToListAsync());
         }
 
         public async Task<IActionResult> Login()

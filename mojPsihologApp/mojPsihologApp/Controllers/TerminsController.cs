@@ -22,8 +22,22 @@ namespace mojPsihologApp.Controllers
         // GET: Termins
         public async Task<IActionResult> Index()
         {
-            ViewBag.korisnickoime = HttpContext.Session.GetString("korisnickoime");
+            var korisnickoime = HttpContext.Session.GetString("korisnickoime");
+            var korisnik = _context.Korisniks.Where(k => k.Korisnickoime == korisnickoime);
+            ViewBag.korisnickoime = korisnickoime;
             var mojPsihologContext = _context.Termins.Include(t => t.KorisnickoimeNavigation);
+
+            var uloga = "";
+            foreach(var u in korisnik)
+            {
+                uloga = u.Uloga;
+            }
+            if (uloga == "psiholog")
+            {
+                ViewBag.uloga = uloga;
+                return View(await mojPsihologContext.Where(k=>k.Korisnickoime==korisnickoime)
+                    .ToListAsync());
+            }
             return View(await mojPsihologContext.ToListAsync());
         }
 

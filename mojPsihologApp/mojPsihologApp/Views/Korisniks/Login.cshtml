@@ -6,8 +6,6 @@
 
 <h1>Login</h1>
 
-<h4>Korisnik</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Login">
@@ -19,18 +17,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Lozinka" class="control-label"></label>
-                <input asp-for="Lozinka" class="form-control" />
+                <input asp-for="Lozinka" type="password" class="form-control" />
                 <span asp-validation-for="Lozinka" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Login" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
