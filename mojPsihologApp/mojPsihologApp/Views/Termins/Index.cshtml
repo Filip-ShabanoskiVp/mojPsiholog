@@ -16,6 +16,15 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.KorisnickoimeNavigation.Korisnickoime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KorisnickoimeNavigation.KorisnickoimeNavigation.Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KorisnickoimeNavigation.KorisnickoimeNavigation.Prezime)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Vreme)
             </th>
             <th>
@@ -24,15 +33,21 @@
             <th>
                 @Html.DisplayNameFor(model => model.Datum)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KorisnickoimeNavigation)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.Korisnickoime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.KorisnickoimeNavigation.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.KorisnickoimeNavigation.Prezime)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Vreme)
             </td>
@@ -41,9 +56,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Datum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.Korisnickoime)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.IdTermin">Edit</a> |

@@ -75,18 +75,20 @@ namespace mojPsihologApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Termin termin)
         {
-            termin.KorisnickoimeNavigation = _context.Psihologs.Where(p => p.Korisnickoime
-            == HttpContext.Session.GetString("korisnickoime")).FirstOrDefault();
+            if (termin.Vreme!=null && termin.Datum!=null && termin.Grad!=null) {
 
-            termin.Korisnickoime = HttpContext.Session.GetString("korisnickoime");
-            termin.Datum = DateTime.SpecifyKind((DateTime)termin.Datum, DateTimeKind.Utc);
-            //  if (ModelState.IsValid)
-            //{
-            _context.Add(termin);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-            //  }
-            //  ViewData["Korisnickoime"] = new SelectList(_context.Psihologs, "Korisnickoime", "Korisnickoime", termin.Korisnickoime);
+                termin.KorisnickoimeNavigation = _context.Psihologs.Where(p => p.Korisnickoime
+                == HttpContext.Session.GetString("korisnickoime")).FirstOrDefault();
+
+                termin.Korisnickoime = HttpContext.Session.GetString("korisnickoime");
+                termin.Datum = DateTime.SpecifyKind((DateTime)termin.Datum, DateTimeKind.Utc);
+
+
+                _context.Add(termin);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewBag.korisnickoime = HttpContext.Session.GetString("korisnickoime");
             return View(termin);
         }
 
