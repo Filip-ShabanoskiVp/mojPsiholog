@@ -51,19 +51,28 @@ namespace mojPsihologApp.Controllers
 
 
 
-            var mojPsihologContext = _context.PacientotZakazuvaTermins.Include(p => p.IdTerminNavigation)
-                .Include(p => p.KorisnickoimeNavigation);
+            var query1 = _context.DavaOcenkas.GroupBy(x => x.Korisnickoimepacient).Select(x =>
+             new
+             {
+                 korisnickoime = x.Key,
+                 broj = x.Count() > 2
+             }).Where(x => x.broj == true).ToList();
 
 
+            var query2 = (from q in query1
+                          join k in _context.Korisniks on q.korisnickoime equals k.Korisnickoime
+                          join pzt in _context.PacientotZakazuvaTermins on k.Korisnickoime equals pzt.korisnickoime
+                          where k.Prezime.StartsWith("Sla")
+                          group pzt by new {pzt.korisnickoime}into grp
+                          select new
+                          {
+                              korisnickoime = grp.Key.korisnickoime,
+                              broj = grp.Count() > 1    
+                          }).Where(x =>x.broj == true).Select(x=>x.korisnickoime).ToList();
 
-            var pacients = (from pzt in _context.PacientotZakazuvaTermins
-                            join k in _context.Korisniks on pzt.korisnickoime equals k.Korisnickoime
-                            where k.Ime.StartsWith("Sla")
-                            select k.Korisnickoime
-                           );
-       
+            var lista = _context.Korisniks.Where(kor => query2.Any(x => x.Equals(kor.Korisnickoime)));
 
-
+            ViewBag.lista = lista;
 
             return View();
         }

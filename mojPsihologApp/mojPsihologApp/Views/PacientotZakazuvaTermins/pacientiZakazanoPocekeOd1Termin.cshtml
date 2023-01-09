@@ -6,3 +6,23 @@
 
 <h1>pacientiZakazanoPocekeOd1Termin</h1>
 
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Корисничко име
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.lista)
+        {
+            <tr>
+                <td>
+                    @item.Korisnickoime
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
