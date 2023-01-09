@@ -10,11 +10,15 @@
 {
     <p>
         <a asp-action="Create">Create New</a>
+        <a asp-action="terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40">terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40</a>
     </p>
 }
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTermin)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.KorisnickoimeNavigation.Korisnickoime)
             </th>
@@ -37,32 +41,70 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.Korisnickoime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.KorisnickoimeNavigation.Ime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.KorisnickoimeNavigation.Prezime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Vreme)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Grad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Datum)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdTermin">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdTermin">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdTermin">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTermin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.Korisnickoime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.KorisnickoimeNavigation.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KorisnickoimeNavigation.KorisnickoimeNavigation.Prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vreme)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datum)
+                </td>
+                @if (ViewBag.uloga == "psiholog")
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdTermin">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.IdTermin">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.IdTermin">Delete</a>
+                    </td>
+                }
+            </tr>
+        }
     </tbody>
 </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

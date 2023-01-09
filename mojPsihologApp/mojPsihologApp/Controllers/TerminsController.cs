@@ -34,11 +34,55 @@ namespace mojPsihologApp.Controllers
             }
             if (uloga == "psiholog")
             {
+
                 ViewBag.uloga = uloga;
                 return View(await mojPsihologContext.Where(k=>k.Korisnickoime==korisnickoime)
                     .ToListAsync());
             }
+
             return View(await mojPsihologContext.ToListAsync());
+        }
+
+        public async Task<IActionResult> terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40()
+        {
+            var korisnickoime = HttpContext.Session.GetString("korisnickoime");
+            var korisnik = _context.Korisniks.Where(k => k.Korisnickoime == korisnickoime);
+            ViewBag.korisnickoime = korisnickoime;
+            var mojPsihologContext = _context.Termins.Include(t => t.KorisnickoimeNavigation);
+
+
+            var terminVoTekovnaGodina = mojPsihologContext.Where(x => DateTime.SpecifyKind((DateTime)x.Datum, DateTimeKind.Utc).Year == DateTime.Now.Year)
+                   .Where(x => DateTime.SpecifyKind((DateTime)x.Datum, DateTimeKind.Utc).Month == DateTime.Now.Month)
+               .Where(x => x.KorisnickoimeNavigation.KorisnickoimeNavigation.Grad == "Prilep")
+                   .Where(x => x.KorisnickoimeNavigation.KorisnickoimeNavigation.Meil.Contains("sk"))
+                   .GroupBy(x => new { x.Korisnickoime, x.Datum });
+
+            var part2 = terminVoTekovnaGodina.Select(g => new
+            {
+                vreme = g.FirstOrDefault().Vreme,
+                korisnickoime = g.FirstOrDefault().Korisnickoime,
+                datum = g.FirstOrDefault().Datum
+
+            });
+
+            var max = part2.Max(x => x.vreme);
+
+            var kor = "";
+            DateTime datum = new DateTime();
+            foreach (var part in part2)
+            {
+                if (part.vreme == max && max >= 1.4)
+                {
+                    kor = part.korisnickoime;
+                    datum = (DateTime)part.datum;
+                }
+            }
+            @ViewBag.korisnicko = kor;
+            @ViewBag.datum = datum;
+
+
+            return View();
+
         }
 
         // GET: Termins/Details/5
@@ -77,6 +121,7 @@ namespace mojPsihologApp.Controllers
         {
             if (termin.Vreme!=null && termin.Datum!=null && termin.Grad!=null) {
 
+
                 termin.KorisnickoimeNavigation = _context.Psihologs.Where(p => p.Korisnickoime
                 == HttpContext.Session.GetString("korisnickoime")).FirstOrDefault();
 
@@ -87,6 +132,18 @@ namespace mojPsihologApp.Controllers
                 _context.Add(termin);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+            }
+            if (termin.Vreme == null)
+            {
+                ModelState.AddModelError("ErrorVreme", "Внесете време!");
+            }
+            if (termin.Datum == null)
+            {
+                ModelState.AddModelError("ErrorDatum", "Внесете датум!!");
+            }
+            if (termin.Grad == null)
+            {
+                ModelState.AddModelError("ErrorGrad", "Внесете град!");
             }
             ViewBag.korisnickoime = HttpContext.Session.GetString("korisnickoime");
             return View(termin);
@@ -189,3 +246,4 @@ namespace mojPsihologApp.Controllers
         }
     }
 }
+

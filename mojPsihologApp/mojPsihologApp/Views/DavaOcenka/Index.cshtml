@@ -1,0 +1,54 @@
+﻿@model IEnumerable<mojPsihologApp.Models.DavaOcenka>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Оценки</h1>
+
+@if (ViewBag.uloga== "pacient")
+{
+    <p>
+        <a asp-action="Create">Дај оценка</a>
+    </p>
+}
+<a asp-action="najdobarPsiholog">Најдобар Психолог</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdOcenkaNavigation.Ocenka1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Korisnickoimepacient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Korisnickoimepsiholog)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdOcenkaNavigation.Ocenka1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Korisnickoimepacient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Korisnickoimepsiholog)
+            </td>
+                @if (ViewBag.uloga == "pacient")
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                }
+        </tr>
+}
+    </tbody>
+</table>

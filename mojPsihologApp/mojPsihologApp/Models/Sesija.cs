@@ -14,4 +14,6 @@ public partial class Sesija
     public string? Broj { get; set; }
 
     public virtual ICollection<Termin> IdTermins { get; } = new List<Termin>();
+
+    public virtual ICollection<SesijaSeOdrzuvaVoTermin> SesijaSeOdrzuvaVoTermins { get; } = new List<SesijaSeOdrzuvaVoTermin>();
 }

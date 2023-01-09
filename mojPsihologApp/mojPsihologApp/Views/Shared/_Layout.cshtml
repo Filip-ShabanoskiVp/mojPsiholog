@@ -27,6 +27,12 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Termins" asp-action="Index">Termins</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PacientotZakazuvaTermins" asp-action="Index">Zakazani termini</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="DavaOcenka" asp-action="Index">Ocenki</a>
+                            </li>
                             }
                         @if (Context.Session.GetString("korisnickoime") == null)
                         {

@@ -15,16 +15,19 @@
             <div class="form-group">
                 <label asp-for="Vreme" class="control-label"></label>
                 <input asp-for="Vreme" class="form-control" />
+                <p class="col-12 text-center text-danger">@Html.ValidationMessage("ErrorVreme")</p>
                 <span asp-validation-for="Vreme" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Grad" class="control-label"></label>
                 <input asp-for="Grad" class="form-control" />
+                <p class="col-12 text-center text-danger">@Html.ValidationMessage("ErrorGrad")</p>
                 <span asp-validation-for="Grad" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Datum" class="control-label"></label>
                 <input asp-for="Datum" type="date" class="form-control" />
+                <p class="col-12 text-center text-danger">@Html.ValidationMessage("ErrorDatum")</p>
                 <span asp-validation-for="Datum" class="text-danger"></span>
             </div>
             <div class="form-group">

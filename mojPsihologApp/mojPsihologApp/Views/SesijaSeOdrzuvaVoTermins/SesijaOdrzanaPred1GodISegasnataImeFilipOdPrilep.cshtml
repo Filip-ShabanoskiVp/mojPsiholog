@@ -1,0 +1,28 @@
+﻿@model IEnumerable<mojPsihologApp.Models.SesijaSeOdrzuvaVoTermin>
+
+@{
+    ViewData["Title"] = "SesijaOdrzanaPred1GodISegasnataImeFilipOdPrilep";
+}
+
+<h1>SesijaOdrzanaPred1GodISegasnataImeFilipOdPrilep</h1>
+
+
+<table class="table">
+<thead>
+    <tr>
+        <th>
+           Корисничко име
+        </th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var item in ViewBag.sesiiOdrzani)
+    {
+    <tr>
+            <td>
+                @item
+            </td>
+    </tr>
+}
+</tbody>
+</table>

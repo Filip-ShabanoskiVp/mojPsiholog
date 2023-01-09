@@ -18,17 +18,13 @@ public partial class MojPsihologContext : DbContext
 
     public virtual DbSet<DavaOcenka> DavaOcenkas { get; set; }
 
-    public virtual DbSet<KorisniciCijSessiSeOdrzalePred1GodinaISegasnataImeEF> KorisniciCijSessiSeOdrzalePred1GodinaISegasnataImeEFs { get; set; }
-
+   
     public virtual DbSet<Korisnik> Korisniks { get; set; }
 
-    public virtual DbSet<Najdobarpsihologsobaremedendodadentermin> Najdobarpsihologsobaremedendodadentermins { get; set; }
-
+ 
     public virtual DbSet<Ocenka> Ocenkas { get; set; }
 
     public virtual DbSet<Pacient> Pacients { get; set; }
-
-    public virtual DbSet<PacientiZakazanoPovekeOd1TerminImeZapocnuvaSoSlaKojI> PacientiZakazanoPovekeOd1TerminImeZapocnuvaSoSlaKojIs { get; set; }
 
     public virtual DbSet<Plaka> Plakas { get; set; }
 
@@ -36,15 +32,20 @@ public partial class MojPsihologContext : DbContext
 
     public virtual DbSet<Psiholog> Psihologs { get; set; }
 
-    public virtual DbSet<Psiholoziprezimekoiimeprezimepacientikojrazgleduvaatuslugikakop> Psiholoziprezimekoiimeprezimepacientikojrazgleduvaatuslugikakops { get; set; }
-
     public virtual DbSet<Sesija> Sesijas { get; set; }
+
 
     public virtual DbSet<Termin> Termins { get; set; }
 
-    public virtual DbSet<Terminivotekovenmesecigododgradprilepmailimaidvremepovekeodcasi> Terminivotekovenmesecigododgradprilepmailimaidvremepovekeodcasis { get; set; }
-
     public virtual DbSet<Usluga> Uslugas { get; set; }
+
+    public virtual DbSet<PacientotZakazuvaTermin> PacientotZakazuvaTermins { get; set; }
+
+    public virtual DbSet<SesijaSeOdrzuvaVoTermin> SesijaSeOdrzuvaVoTermins { get; set; }
+
+    public virtual DbSet<PsihologNudiUsluga> PsihologNudiUslugas { get; set; }
+
+    public virtual DbSet<PacientRazgleduvaUsluga> PacientRazgleduvaUslugas { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -82,16 +83,6 @@ public partial class MojPsihologContext : DbContext
                 .HasConstraintName("dava_ocenka_korisnickoimepsiholog_fkey");
         });
 
-        modelBuilder.Entity<KorisniciCijSessiSeOdrzalePred1GodinaISegasnataImeEF>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("korisnici_cij_sessi_se_odrzale_pred1_godina_i_segasnata_ime_e_f");
-
-            entity.Property(e => e.Korisnickoime)
-                .HasColumnType("character varying")
-                .HasColumnName("korisnickoime");
-        });
 
         modelBuilder.Entity<Korisnik>(entity =>
         {
@@ -128,17 +119,6 @@ public partial class MojPsihologContext : DbContext
                 .HasColumnName("uloga");
         });
 
-        modelBuilder.Entity<Najdobarpsihologsobaremedendodadentermin>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("najdobarpsihologsobaremedendodadentermin");
-
-            entity.Property(e => e.Korisnickoime)
-                .HasColumnType("character varying")
-                .HasColumnName("korisnickoime");
-            entity.Property(e => e.Prosek).HasColumnName("prosek");
-        });
 
         modelBuilder.Entity<Ocenka>(entity =>
         {
@@ -200,16 +180,6 @@ public partial class MojPsihologContext : DbContext
                     });
         });
 
-        modelBuilder.Entity<PacientiZakazanoPovekeOd1TerminImeZapocnuvaSoSlaKojI>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("pacienti_zakazano_poveke_od_1_termin_ime_zapocnuva_so_sla_koj_i");
-
-            entity.Property(e => e.Korisnickoime)
-                .HasColumnType("character varying")
-                .HasColumnName("korisnickoime");
-        });
 
         modelBuilder.Entity<Plaka>(entity =>
         {
@@ -282,22 +252,6 @@ public partial class MojPsihologContext : DbContext
                     });
         });
 
-        modelBuilder.Entity<Psiholoziprezimekoiimeprezimepacientikojrazgleduvaatuslugikakop>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("psiholoziprezimekoiimeprezimepacientikojrazgleduvaatuslugikakop");
-
-            entity.Property(e => e.Ime)
-                .HasColumnType("character varying")
-                .HasColumnName("ime");
-            entity.Property(e => e.Korisnickoime)
-                .HasColumnType("character varying")
-                .HasColumnName("korisnickoime");
-            entity.Property(e => e.Prezime)
-                .HasColumnType("character varying")
-                .HasColumnName("prezime");
-        });
 
         modelBuilder.Entity<Sesija>(entity =>
         {
@@ -332,6 +286,33 @@ public partial class MojPsihologContext : DbContext
                     });
         });
 
+        modelBuilder.Entity<SesijaSeOdrzuvaVoTermin>(entity =>
+        {
+
+
+
+            entity.HasKey(e => new { e.idSesija, e.idTermin }).HasName("sesija_se_odrzuva_vo_termins_pkey");
+
+            entity.ToTable("sesijaseodrzuvavotermin");
+
+            entity.Property(e => e.idSesija)
+                 .HasColumnName("idsesija");
+
+            entity.Property(e => e.idTermin)
+                .HasColumnName("idtermin");
+
+
+            entity.HasOne(p => p.IdSesijaNavigation)
+            .WithMany(p => p.SesijaSeOdrzuvaVoTermins)
+            .HasForeignKey(p => p.idSesija)
+             .HasConstraintName("sesija_se_odrzuva_vo_termins_id_sesija_fkey"); 
+
+            entity.HasOne(d => d.IdTerminNavigation)
+                .WithMany(p => p.SesijaSeOdrzuvaVoTermins)
+                .HasForeignKey(d => d.idTermin)
+                .HasConstraintName("sesija_se_odrzuva_vo_termins_id_termin_fkey");
+        });
+
         modelBuilder.Entity<Termin>(entity =>
         {
             entity.HasKey(e => e.IdTermin).HasName("termin_pkey");
@@ -354,17 +335,6 @@ public partial class MojPsihologContext : DbContext
                 .HasConstraintName("termin_korisnickoime_fkey");
         });
 
-        modelBuilder.Entity<Terminivotekovenmesecigododgradprilepmailimaidvremepovekeodcasi>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("terminivotekovenmesecigododgradprilepmailimaidvremepovekeodcasi");
-
-            entity.Property(e => e.Datum).HasColumnName("datum");
-            entity.Property(e => e.Ime)
-                .HasColumnType("character varying")
-                .HasColumnName("ime");
-        });
 
         modelBuilder.Entity<Usluga>(entity =>
         {
@@ -380,6 +350,87 @@ public partial class MojPsihologContext : DbContext
                 .HasColumnType("character varying")
                 .HasColumnName("opis");
         });
+
+        modelBuilder.Entity<PacientotZakazuvaTermin>(entity =>
+        {
+            entity.HasKey(e => new { e.korisnickoime, e.idTermin }).HasName("pacientot_zakazuva_termins_pkey");
+
+            entity.ToTable("pacientotzakazuvatermin");
+
+            entity.Property(e => e.korisnickoime)
+                .HasColumnName("korisnickoime");
+
+            entity.Property(e => e.idTermin)
+                .HasColumnName("idtermin");
+
+
+            entity.HasOne(e => e.KorisnickoimeNavigation)
+            .WithMany(pzk => pzk.PacientotZakazuvaTermins)
+             .HasForeignKey(pzk => pzk.korisnickoime)
+             .HasConstraintName("pacientot_zakazuva_termin_korisnickoime_fkey");
+
+            entity.HasOne(e => e.IdTerminNavigation)
+           .WithMany(pzk => pzk.PacientotZakazuvaTermins)
+            .HasForeignKey(pzk => pzk.idTermin)
+            .HasConstraintName("pacientot_zakazuva_termin_id_termin_fkey");
+
+
+        });
+
+
+        modelBuilder.Entity<PsihologNudiUsluga>(entity =>
+        {
+            entity.HasKey(e => new { e.korisnickoime, e.idUsluga }).HasName("psiholog_nudi_usluga_pkey");
+
+            entity.ToTable("psiholognudiusluga");
+
+            entity.Property(e => e.korisnickoime)
+                .HasColumnName("korisnickoime");
+
+            entity.Property(e => e.idUsluga)
+                .HasColumnName("idusluga");
+
+
+            entity.HasOne(e => e.KorisnickoimeNavigation)
+            .WithMany(pzk => pzk.PsihologNudiUslugas)
+             .HasForeignKey(pzk => pzk.korisnickoime)
+             .HasConstraintName("psiholog_nudi_usluga_korisnickoime_fkey");
+
+            entity.HasOne(e => e.IdUslugaNavigation)
+           .WithMany(pzk => pzk.PsihologNudiUslugas)
+            .HasForeignKey(pzk => pzk.idUsluga)
+            .HasConstraintName("psiholog_nudi_usluga_id_usluga_fkey");
+
+
+        });
+
+
+        modelBuilder.Entity<PacientRazgleduvaUsluga>(entity =>
+        {
+            entity.HasKey(e => new { e.korisnickoime, e.idUsluga }).HasName("pacient_razgleduva_usluga_pkey");
+
+            entity.ToTable("pacientrazgleduvausluga");
+
+            entity.Property(e => e.korisnickoime)
+                .HasColumnName("korisnickoime");
+
+            entity.Property(e => e.idUsluga)
+                .HasColumnName("idusluga");
+
+
+            entity.HasOne(e => e.KorisnickoimeNavigation)
+            .WithMany(pzk => pzk.PacientRazgleduvaUslugas)
+             .HasForeignKey(pzk => pzk.korisnickoime)
+             .HasConstraintName("pacient_razgleduva_usluga_korisnickoime_fkey");
+
+            entity.HasOne(e => e.IdUslugaNavigation)
+           .WithMany(pzk => pzk.PacientRazgleduvaUslugas)
+            .HasForeignKey(pzk => pzk.idUsluga)
+            .HasConstraintName("pacient_razgleduva_usluga_id_usluga_fkey");
+
+
+        });
+
 
         OnModelCreatingPartial(modelBuilder);
     }

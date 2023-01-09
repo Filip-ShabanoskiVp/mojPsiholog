@@ -27,12 +27,14 @@
             </div>            
             <div class="form-group">
                 <label asp-for="Uloga" class="control-label"></label>
-                <select asp-for="Uloga" class="form-control" asp-items="ViewBag.uloga"></select>
+                <select asp-for="Uloga" class="form-control" asp-items="ViewBag.uloga">
+                    <option value="">-- Избери --</option>
+                </select>
                 <span asp-validation-for="Uloga" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Telefon" class="control-label"></label>
-                <input asp-for="Telefon" class="form-control"  />
+                <input asp-for="Telefon" class="form-control" placeholder="Ex. 075.125.785" />
                 <span asp-validation-for="Telefon" class="text-danger"></span>
             </div>
             <div class="form-group">

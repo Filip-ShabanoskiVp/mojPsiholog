@@ -8,81 +8,197 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = mojPsihologApp
 build_property.RootNamespace = mojPsihologApp
-build_property.ProjectDir = C:\Users\fshab\Desktop\proekt\mojPsihologApp\mojPsihologApp\
+build_property.ProjectDir = C:\Users\fshab\Desktop\proekt finale\mojPsihologApp\mojPsihologApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\fshab\Desktop\proekt\mojPsihologApp\mojPsihologApp
+build_property.MSBuildProjectDirectory = C:\Users\fshab\Desktop\proekt finale\mojPsihologApp\mojPsihologApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Home/Index.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/DavaOcenka/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF2YU9jZW5rYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/DavaOcenka/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF2YU9jZW5rYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/DavaOcenka/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF2YU9jZW5rYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/DavaOcenka/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF2YU9jZW5rYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/DavaOcenka/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF2YU9jZW5rYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/DavaOcenka/najdobarPsiholog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF2YU9jZW5rYVxuYWpkb2JhclBzaWhvbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Home/Privacy.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Korisniks/Delete.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Korisniks/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Korisniks/Details.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Korisniks/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Korisniks/Edit.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Korisniks/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Korisniks/Index.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Korisniks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Korisniks/Login.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Korisniks/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Korisniks/Register.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Korisniks/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Shared/Error.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientotZakazuvaTermins/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudG90WmFrYXp1dmFUZXJtaW5zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientotZakazuvaTermins/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudG90WmFrYXp1dmFUZXJtaW5zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientotZakazuvaTermins/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudG90WmFrYXp1dmFUZXJtaW5zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientotZakazuvaTermins/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudG90WmFrYXp1dmFUZXJtaW5zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientotZakazuvaTermins/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudG90WmFrYXp1dmFUZXJtaW5zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientotZakazuvaTermins/pacientiZakazanoPocekeOd1Termin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudG90WmFrYXp1dmFUZXJtaW5zXHBhY2llbnRpWmFrYXphbm9Qb2Nla2VPZDFUZXJtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientRazgleduvaUslugas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFJhemdsZWR1dmFVc2x1Z2FzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientRazgleduvaUslugas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFJhemdsZWR1dmFVc2x1Z2FzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientRazgleduvaUslugas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFJhemdsZWR1dmFVc2x1Z2FzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientRazgleduvaUslugas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFJhemdsZWR1dmFVc2x1Z2FzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PacientRazgleduvaUslugas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFJhemdsZWR1dmFVc2x1Z2FzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PsihologNudiUslugas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpaG9sb2dOdWRpVXNsdWdhc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PsihologNudiUslugas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpaG9sb2dOdWRpVXNsdWdhc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PsihologNudiUslugas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpaG9sb2dOdWRpVXNsdWdhc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PsihologNudiUslugas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpaG9sb2dOdWRpVXNsdWdhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/PsihologNudiUslugas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpaG9sb2dOdWRpVXNsdWdhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/SesijaSeOdrzuvaVoTermins/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaWphU2VPZHJ6dXZhVm9UZXJtaW5zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/SesijaSeOdrzuvaVoTermins/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaWphU2VPZHJ6dXZhVm9UZXJtaW5zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/SesijaSeOdrzuvaVoTermins/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaWphU2VPZHJ6dXZhVm9UZXJtaW5zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/SesijaSeOdrzuvaVoTermins/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaWphU2VPZHJ6dXZhVm9UZXJtaW5zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/SesijaSeOdrzuvaVoTermins/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaWphU2VPZHJ6dXZhVm9UZXJtaW5zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/SesijaSeOdrzuvaVoTermins/SesijaOdrzanaPred1GodISegasnataImeFilipOdPrilep.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaWphU2VPZHJ6dXZhVm9UZXJtaW5zXFNlc2lqYU9kcnphbmFQcmVkMUdvZElTZWdhc25hdGFJbWVGaWxpcE9kUHJpbGVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Termins/Create.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Termins/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWluc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Termins/Delete.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Termins/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWluc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Termins/Details.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Termins/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWluc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Termins/Edit.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Termins/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWluc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Termins/Index.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Termins/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWluc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/_ViewImports.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Termins/terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWluc1x0ZXJtaW5pVGVrb3Zlbk1lc2VjSUdvZGluYUdyYWRQcmlsZXBPZFBvY2VrZW9kQ2FzSTQwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/_ViewStart.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fshab/Desktop/proekt/mojPsihologApp/mojPsihologApp/Views/Shared/_Layout.cshtml]
+[C:/Users/fshab/Desktop/proekt finale/mojPsihologApp/mojPsihologApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-g3scbsx6he

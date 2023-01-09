@@ -1,0 +1,27 @@
+﻿@model IEnumerable<mojPsihologApp.Models.DavaOcenka>
+
+@{
+    ViewData["Title"] = "najdobarPsiholog";
+}
+
+<h1>Најдобар Психолог</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Корисничко име</th>
+            <th>Име</th>
+            <th>Презиме</th>
+            <th>Просек</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@ViewBag.kor</td>
+            <td>@ViewBag.ime</td>
+            <td>@ViewBag.prezime</td>
+            <td>@ViewBag.maxProsek</td>
+        </tr>
+    </tbody>
+    <a asp-action="Index">Назад</a>
+</table>

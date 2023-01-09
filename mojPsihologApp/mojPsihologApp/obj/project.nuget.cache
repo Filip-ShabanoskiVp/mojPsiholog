@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bo/rT90Ry4Sa9p9mda3Ny/LFfKsFCyX2j0Weab0CTwtLiMYQYiKW6A+cAvrZ1uTCtj591K7S3Ld94FsDncZvaA==",
+  "dgSpecHash": "Jm9etkHG/XmXiAJ0zuBIe6cXiVBtjaVzKfhCMkefjBn0aSAb994VgC5pemVS5/HT6X2NIM1f1lVsoiv3wEts3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fshab\\Desktop\\proekt\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj",
+  "projectFilePath": "C:\\Users\\fshab\\Desktop\\proekt finale\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fshab\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\fshab\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

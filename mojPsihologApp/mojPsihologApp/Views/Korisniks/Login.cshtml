@@ -20,6 +20,7 @@
                 <input asp-for="Lozinka" type="password" class="form-control" />
                 <span asp-validation-for="Lozinka" class="text-danger"></span>
             </div>
+            <p class="col-12 text-center text-danger">@Html.ValidationMessage("Error")</p>
             <div class="form-group">
                 <input type="submit" value="Login" class="btn btn-primary" />
             </div>

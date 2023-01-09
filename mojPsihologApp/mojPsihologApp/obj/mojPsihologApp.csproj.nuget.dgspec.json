@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fshab\\Desktop\\proekt\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj": {}
+    "C:\\Users\\fshab\\Desktop\\proekt finale\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fshab\\Desktop\\proekt\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj": {
+    "C:\\Users\\fshab\\Desktop\\proekt finale\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fshab\\Desktop\\proekt\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj",
+        "projectUniqueName": "C:\\Users\\fshab\\Desktop\\proekt finale\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj",
         "projectName": "mojPsihologApp",
-        "projectPath": "C:\\Users\\fshab\\Desktop\\proekt\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj",
+        "projectPath": "C:\\Users\\fshab\\Desktop\\proekt finale\\mojPsihologApp\\mojPsihologApp\\mojPsihologApp.csproj",
         "packagesPath": "C:\\Users\\fshab\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fshab\\Desktop\\proekt\\mojPsihologApp\\mojPsihologApp\\obj\\",
+        "outputPath": "C:\\Users\\fshab\\Desktop\\proekt finale\\mojPsihologApp\\mojPsihologApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fshab\\AppData\\Roaming\\NuGet\\NuGet.Config",

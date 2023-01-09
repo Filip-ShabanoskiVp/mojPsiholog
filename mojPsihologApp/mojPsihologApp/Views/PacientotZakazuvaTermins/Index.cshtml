@@ -1,0 +1,50 @@
+﻿@model IEnumerable<mojPsihologApp.Models.PacientotZakazuvaTermin>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Закажани термини</h1>
+
+@if (ViewBag.uloga == "pacient")
+{
+    <p>
+        <a asp-action="Create">Закажи термин</a>
+    </p>
+}
+<p>
+    <a asp-action="pacientiZakazanoPocekeOd1Termin">pacientiZakazanoPovekeOd1TerminImeZapocnuvaSoSlaKojImaDadenoPovekeOd2Ocenki</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.korisnickoime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idTermin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.korisnickoime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idTermin)
+            </td>
+                @if (ViewBag.uloga == "pacient")
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+            }
+        </tr>
+}
+    </tbody>
+</table>

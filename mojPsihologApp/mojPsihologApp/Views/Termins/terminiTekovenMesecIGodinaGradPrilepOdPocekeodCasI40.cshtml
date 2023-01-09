@@ -1,0 +1,32 @@
+﻿@model IEnumerable<mojPsihologApp.Models.Termin>
+
+@{
+    ViewData["Title"] = "terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40";
+}
+
+<h1>terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Корисничко име
+            </th>
+            <th>
+                Датум
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @ViewBag.korisnicko
+            </td>
+            <td>
+               @ViewBag.datum
+            </td>
+        </tr>
+    </tbody>
+    <a asp-action="Index">Back to List</a>
+</table>

@@ -14,4 +14,8 @@ public partial class Usluga
     public virtual ICollection<Pacient> Korisnickoimes { get; } = new List<Pacient>();
 
     public virtual ICollection<Psiholog> KorisnickoimesNavigation { get; } = new List<Psiholog>();
+
+    public virtual ICollection<PsihologNudiUsluga> PsihologNudiUslugas { get; } = new List<PsihologNudiUsluga>();
+
+    public virtual ICollection<PacientRazgleduvaUsluga> PacientRazgleduvaUslugas { get; } = new List<PacientRazgleduvaUsluga>();
 }

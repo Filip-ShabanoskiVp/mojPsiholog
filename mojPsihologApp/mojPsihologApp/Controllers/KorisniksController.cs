@@ -37,7 +37,7 @@ namespace mojPsihologApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(string Korisnickoime, string Lozinka)
         {
-            if (Korisnickoime!=null || Lozinka!=null)
+            if (Korisnickoime!=null && Lozinka!=null)
             {
                 var korisniks = await _context.Korisniks.Where(k => k.Korisnickoime == Korisnickoime).FirstOrDefaultAsync();
                 if (korisniks != null && korisniks.Lozinka == Lozinka)
@@ -45,6 +45,7 @@ namespace mojPsihologApp.Controllers
                     HttpContext.Session.SetString("korisnickoime", korisniks.Korisnickoime);
                     return RedirectToAction(nameof(Index));
                 }
+                ModelState.AddModelError("Error", "Непостоечки корисник или лозинка!");
             }
             return View();
         }
@@ -245,3 +246,5 @@ namespace mojPsihologApp.Controllers
         }
     }
 }
+
+
