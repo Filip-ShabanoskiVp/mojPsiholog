@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "PsiholoziPrezimeKoIImePrezimePacientiKojRazgleduvaatUslugiKakoPonudenite";
+}
+
+<h1>PsiholoziPrezimeKoIImePrezimePacientiKojRazgleduvaatUslugiKakoPonudenite</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Корисничко име</th>
+            <th>Имe</th>
+            <th> Презиме</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.lista)
+        {
+            <tr>
+                <td>@item.Korisnickoime</td>
+                <td>@item.Ime</td>
+                <td>@item.Prezime</td>
+            </tr>
+        }
+    </tbody>
+</table>

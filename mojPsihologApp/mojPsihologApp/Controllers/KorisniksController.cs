@@ -28,6 +28,39 @@ namespace mojPsihologApp.Controllers
             return View(await _context.Korisniks.Where(k=>k.Korisnickoime == korisnickoime ).ToListAsync());
         }
 
+        public async Task<IActionResult> PsiholoziPrezimeKoIImePrezimePacientiKojRazgleduvaatUslugiKakoPonudenite()
+        {
+            var query1 = _context.PsihologNudiUslugas.GroupBy(x => x.idUsluga).Select(x =>
+            new
+            {
+                idUsluga = x.Key,
+                broj = x.Count() >= 2
+            }).Where(x => x.broj == true).ToList();
+
+            var query2 = (from q in query1
+                          join pru in _context.PacientRazgleduvaUslugas on q.idUsluga equals pru.idUsluga
+                          join pzt in _context.PacientotZakazuvaTermins on pru.korisnickoime equals pzt.korisnickoime
+                          join k in _context.Korisniks on pzt.korisnickoime equals k.Korisnickoime
+                          where k.Prezime.Contains("ko")
+                          select pru.korisnickoime).ToList();
+
+            List<string> lista = new List<string>();
+
+            foreach(var q in query2)
+            {
+                if (!lista.Contains(q))
+                {
+                    lista.Add(q);
+                }
+            }
+
+            var finalList = _context.Korisniks.Where(k => lista.Any(x => x.Equals(k.Korisnickoime)));
+
+            ViewBag.lista = finalList;
+
+            return View();
+        }
+
         public async Task<IActionResult> Login()
         {
             return View();
