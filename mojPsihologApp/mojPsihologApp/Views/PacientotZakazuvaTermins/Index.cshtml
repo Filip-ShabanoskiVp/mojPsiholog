@@ -5,24 +5,28 @@
 }
 
 <h1>Закажани термини</h1>
-
-@if (ViewBag.uloga == "pacient")
-{
-    <p>
-        <a asp-action="Create">Закажи термин</a>
-    </p>
-}
-<p>
     <a asp-action="pacientiZakazanoPocekeOd1Termin">pacientiZakazanoPovekeOd1TerminImeZapocnuvaSoSlaKojImaDadenoPovekeOd2Ocenki</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.idTermin)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.korisnickoime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.idTermin)
+                @Html.DisplayNameFor(model => model.IdTerminNavigation.Korisnickoime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTerminNavigation.Vreme)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTerminNavigation.Grad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTerminNavigation.Datum)
             </th>
             <th></th>
         </tr>
@@ -31,11 +35,23 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.korisnickoime)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.idTermin)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.korisnickoime)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.IdTerminNavigation.Korisnickoime)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.IdTerminNavigation.Vreme)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.IdTerminNavigation.Grad)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.IdTerminNavigation.Datum)
+                </td>
                 @if (ViewBag.uloga == "pacient")
                 {
                     <td>

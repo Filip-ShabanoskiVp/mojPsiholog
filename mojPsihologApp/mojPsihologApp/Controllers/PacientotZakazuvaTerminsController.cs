@@ -38,6 +38,11 @@ namespace mojPsihologApp.Controllers
 
 
             var mojPsihologContext = _context.PacientotZakazuvaTermins.Include(p => p.IdTerminNavigation).Include(p => p.KorisnickoimeNavigation);
+
+            if (uloga.Uloga == "pacient")
+            {
+                return View(await mojPsihologContext.Where(x => x.korisnickoime == korisnickoime).ToListAsync());
+            }
             return View(await mojPsihologContext.ToListAsync());
         }
 
@@ -98,7 +103,7 @@ namespace mojPsihologApp.Controllers
         }
 
         // GET: PacientotZakazuvaTermins/Create
-        public IActionResult Create()
+        public IActionResult Create([FromQuery(Name = "IdTermin")] int IdTermin)
         {
             var korisnickoime = HttpContext.Session.GetString("korisnickoime");
             var korisnik = _context.Korisniks.Where(k => k.Korisnickoime == korisnickoime);
@@ -113,7 +118,7 @@ namespace mojPsihologApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("korisnickoime,idTermin")] PacientotZakazuvaTermin pacientotZakazuvaTermin,Termin termin)
+        public async Task<IActionResult> Create([Bind("korisnickoime,idTermin")] PacientotZakazuvaTermin pacientotZakazuvaTermin)
         {
 
             var currentUser = HttpContext.Session.GetString("korisnickoime");
@@ -122,9 +127,7 @@ namespace mojPsihologApp.Controllers
             pacientotZakazuvaTermin.KorisnickoimeNavigation = _context.Pacients.Where(p => p.Korisnickoime
               == HttpContext.Session.GetString("korisnickoime")).FirstOrDefault();
 
-            //var termin = await _context.Termins.FindAsync(id);
 
-            //pacientotZakazuvaTermin.idTermin = termin.IdTermin;
          
 
             var pacient = _context.PacientotZakazuvaTermins.Where(x => x.korisnickoime == currentUser);
@@ -135,16 +138,16 @@ namespace mojPsihologApp.Controllers
                 if (p.idTermin == pacientotZakazuvaTermin.idTermin)
                 {
                     ModelState.AddModelError("Error", "Корисникот " + p.korisnickoime + " веќе закажал за термин со id " + p.idTermin);
-                    ViewData["idTermin"] = new SelectList(_context.Termins, "IdTermin", "IdTermin");
-                    return View(pacientotZakazuvaTermin);
+                    return RedirectToAction("Index", "Termins",new { IdTermin = p.idTermin});
+                    return View("/Termins/Index");
                 }
             }
 
-
             _context.Add(pacientotZakazuvaTermin);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        
+            ModelState.AddModelError("Success", "Успешно додаден термин");
+            return RedirectToAction("Index", "Termins", new { IdTermin = 0 });
+
         }
 
         // GET: PacientotZakazuvaTermins/Edit/5

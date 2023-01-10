@@ -10,7 +10,7 @@ public partial class Termin
 {
     public int IdTermin { get; set; }
 
-    [Display(Name = "Корисничко име")]
+    [DisplayName("Корисничко име на психолог")]
     public string Korisnickoime { get; set; } = null!;
 
 

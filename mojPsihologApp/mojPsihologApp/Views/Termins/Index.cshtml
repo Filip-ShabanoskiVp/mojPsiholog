@@ -13,6 +13,9 @@
         <a asp-action="terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40">terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40</a>
     </p>
 }
+
+
+
 <table class="table">
     <thead>
         <tr>
@@ -37,6 +40,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Datum)
             </th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -68,9 +72,8 @@
                 @if (ViewBag.uloga == "pacient")
                 {
                     <td>
-                        <form asp-action="Create" asp-controller="PacientotZakazuvaTermins" method="post">
-                            <input type="hidden" aspro >
-                            @Html.HiddenFor(modelItem => item.IdTermin)
+                        <form asp-action="Create" asp-controller="PacientotZakazuvaTermins" method="get">
+                            <input type="hidden" id="@item.IdTermin" name="IdTermin" value="@item.IdTermin" />
                             <input type="submit" value="Закажи" />
                         </form>
                     </td>
@@ -87,13 +90,13 @@
         }
     </tbody>
 </table>
-
-
-
-
-
-
-
+@if (ViewBag.idTermin=="0")
+{
+    <h3 class="text-success">Успешно е закажан терминот!</h3>
+}
+else if (ViewBag.idTermin!=""){
+    <h3 class="text-danger">Терминот со ид @ViewBag.idTermin  вие веќе закажан!</h3>
+}
 
 
 

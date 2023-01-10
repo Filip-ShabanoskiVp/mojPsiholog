@@ -22,11 +22,17 @@ namespace mojPsihologApp.Controllers
 
         // GET: Termins
         public async Task<IActionResult> Index()
-        {
+            {
             var korisnickoime = HttpContext.Session.GetString("korisnickoime");
             var korisnik = _context.Korisniks.Where(k => k.Korisnickoime == korisnickoime);
             ViewBag.korisnickoime = korisnickoime;
-            var mojPsihologContext = _context.Termins.Include(t => t.KorisnickoimeNavigation);
+            var mojPsihologContext = _context.Termins.Include(t => t.KorisnickoimeNavigation)
+                .Include(t => t.KorisnickoimeNavigation.KorisnickoimeNavigation);
+ 
+
+            string param = Request.Query["IdTermin"].ToString();
+
+            ViewBag.idTermin = param;
 
             var uloga = "";
             foreach(var u in korisnik)

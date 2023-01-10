@@ -12,11 +12,7 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="idTermin" class="control-label"></label>
-                <select asp-for="idTermin" class ="form-control" asp-items="ViewBag.idTermin">
-                    <option value="">-- Избери --</option>
-                </select>
-                <p class="col-12 text-center text-danger">@Html.ValidationMessage("Error")</p>
+                <input type="hidden" asp-for="idTermin" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Закажи" class="btn btn-primary" />
@@ -25,9 +21,6 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
