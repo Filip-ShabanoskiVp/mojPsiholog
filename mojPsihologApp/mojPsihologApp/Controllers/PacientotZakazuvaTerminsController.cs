@@ -43,7 +43,10 @@ namespace mojPsihologApp.Controllers
             {
                 return View(await mojPsihologContext.Where(x => x.korisnickoime == korisnickoime).ToListAsync());
             }
-            return View(await mojPsihologContext.ToListAsync());
+            else
+            {
+                return View(await mojPsihologContext.Where(x => x.IdTerminNavigation.Korisnickoime == korisnickoime).ToListAsync());
+            }
         }
 
         public async Task<IActionResult> pacientiZakazanoPocekeOd1Termin()

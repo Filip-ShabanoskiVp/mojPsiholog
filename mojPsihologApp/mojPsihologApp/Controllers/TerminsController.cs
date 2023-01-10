@@ -75,7 +75,7 @@ namespace mojPsihologApp.Controllers
 
             });
 
-
+            
             var max = part2.Max(x => x.vreme);
 
             var kor = "";
@@ -90,7 +90,6 @@ namespace mojPsihologApp.Controllers
             }
             @ViewBag.korisnicko = kor;
             @ViewBag.datum = datum;
-
 
             return View();
 

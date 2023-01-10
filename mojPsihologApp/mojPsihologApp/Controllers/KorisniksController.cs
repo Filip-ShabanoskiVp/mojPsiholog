@@ -53,8 +53,8 @@ namespace mojPsihologApp.Controllers
                     lista.Add(q);
                 }
             }
-
             var finalList = _context.Korisniks.Where(k => lista.Any(x => x.Equals(k.Korisnickoime)));
+            finalList.OrderByDescending(x => x.Korisnickoime).ThenBy(x => x.Ime).ThenBy(x => x.Prezime).ToList();
 
             ViewBag.lista = finalList;
 

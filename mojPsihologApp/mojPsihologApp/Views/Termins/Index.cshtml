@@ -9,8 +9,7 @@
 @if (ViewBag.uloga == "psiholog")
 {
     <p>
-        <a asp-action="Create">Create New</a>
-        <a asp-action="terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40">terminiTekovenMesecIGodinaGradPrilepOdPocekeodCasI40</a>
+        <a asp-action="Create">Креирај нов термин</a>
     </p>
 }
 
@@ -95,7 +94,7 @@
     <h3 class="text-success">Успешно е закажан терминот!</h3>
 }
 else if (ViewBag.idTermin!=""){
-    <h3 class="text-danger">Терминот со ид @ViewBag.idTermin  вие веќе закажан!</h3>
+    <h3 class="text-danger">Терминот со ид @ViewBag.idTermin e веќе закажан!</h3>
 }
 
 

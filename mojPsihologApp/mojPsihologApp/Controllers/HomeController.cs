@@ -26,6 +26,15 @@ namespace mojPsihologApp.Controllers
             return View();
         }
 
+        public IActionResult Pogledi()
+        {
+            var korisnickoime = HttpContext.Session.GetString("korisnickoime");
+            var korisnik = _context.Korisniks.Where(k => k.Korisnickoime == korisnickoime);
+            ViewBag.korisnickoime = korisnickoime;
+
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
