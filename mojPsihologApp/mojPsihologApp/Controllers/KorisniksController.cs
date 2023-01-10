@@ -138,33 +138,59 @@ namespace mojPsihologApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(korisnik);
-                await _context.SaveChangesAsync();
-                if (korisnik.Uloga == "psiholog")
+                var korisniksExists = _context.Korisniks.Where(x => x.Korisnickoime == korisnik.Korisnickoime).FirstOrDefault();
+                if (korisniksExists==null)
                 {
-                    Psiholog psiholog = new Psiholog()
-                    {
-                        Korisnickoime = korisnik.Korisnickoime,
-                        KorisnickoimeNavigation = _context.Korisniks.Where(p => p.Korisnickoime == korisnik.Korisnickoime)
-                        .FirstOrDefault()
-                    };
-                    _context.Psihologs.Add(psiholog);
+                    _context.Add(korisnik);
                     await _context.SaveChangesAsync();
+                    if (korisnik.Uloga == "psiholog")
+                    {
+                        Psiholog psiholog = new Psiholog()
+                        {
+                            Korisnickoime = korisnik.Korisnickoime,
+                            KorisnickoimeNavigation = _context.Korisniks.Where(p => p.Korisnickoime == korisnik.Korisnickoime)
+                            .FirstOrDefault()
+                        };
+                        _context.Psihologs.Add(psiholog);
+                        await _context.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        Pacient pacient = new Pacient()
+                        {
+                            Korisnickoime = korisnik.Korisnickoime,
+                            KorisnickoimeNavigation = _context.Korisniks.Where(p => p.Korisnickoime == korisnik.Korisnickoime)
+                           .FirstOrDefault()
+                        };
+
+
+                        _context.Pacients.Add(pacient);
+                        await _context.SaveChangesAsync();
+
+                    }
+                    return RedirectToAction(nameof(Login));
                 }
                 else
                 {
-                    Pacient pacient = new Pacient()
+                    List<Uloga> ulogis = new List<Uloga>();
+                    var us1 = new Uloga()
                     {
-                        Korisnickoime = korisnik.Korisnickoime,
-                        KorisnickoimeNavigation = _context.Korisniks.Where(p => p.Korisnickoime == korisnik.Korisnickoime)
-                       .FirstOrDefault()
+                        ime = "psiholog"
                     };
 
-                    _context.Pacients.Add(pacient);
-                    await _context.SaveChangesAsync();
+                    var us2= new Uloga()
+                    {
+                        ime = "pacient"
+                    };
 
+                    ulogis.Add(us1);
+                    ulogis.Add(us1);
+
+                    ViewData["uloga"] = new SelectList(ulogis.ToList(), "ime", "ime");
+                    ModelState.AddModelError("Error", "Корисничкото име веќе постои!");
+                    return View(korisnik);
                 }
-                return RedirectToAction(nameof(Login));
+
             }
 
             List<Uloga> ulogi = new List<Uloga>();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,10 +33,13 @@ namespace mojPsihologApp.Controllers
             {
                 uloga = u.Uloga;
             }
+            if(uloga != "")
+            {
+                ViewBag.uloga = uloga;
+            }
             if (uloga == "psiholog")
             {
 
-                ViewBag.uloga = uloga;
                 return View(await mojPsihologContext.Where(k=>k.Korisnickoime==korisnickoime)
                     .ToListAsync());
             }
@@ -50,7 +54,7 @@ namespace mojPsihologApp.Controllers
             ViewBag.korisnickoime = korisnickoime;
             var mojPsihologContext = _context.Termins.Include(t => t.KorisnickoimeNavigation);
 
-
+           
             var terminVoTekovnaGodina = mojPsihologContext.Where(x => DateTime.SpecifyKind((DateTime)x.Datum, DateTimeKind.Utc).Year == DateTime.Now.Year)
                    .Where(x => DateTime.SpecifyKind((DateTime)x.Datum, DateTimeKind.Utc).Month == DateTime.Now.Month)
                .Where(x => x.KorisnickoimeNavigation.KorisnickoimeNavigation.Grad == "Prilep")
@@ -64,6 +68,7 @@ namespace mojPsihologApp.Controllers
                 datum = g.FirstOrDefault().Datum
 
             });
+
 
             var max = part2.Max(x => x.vreme);
 

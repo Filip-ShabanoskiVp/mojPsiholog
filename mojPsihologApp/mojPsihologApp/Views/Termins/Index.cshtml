@@ -65,6 +65,16 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Datum)
                 </td>
+                @if (ViewBag.uloga == "pacient")
+                {
+                    <td>
+                        <form asp-action="Create" asp-controller="PacientotZakazuvaTermins" method="post">
+                            <input type="hidden" aspro >
+                            @Html.HiddenFor(modelItem => item.IdTermin)
+                            <input type="submit" value="Закажи" />
+                        </form>
+                    </td>
+                }
                 @if (ViewBag.uloga == "psiholog")
                 {
                     <td>

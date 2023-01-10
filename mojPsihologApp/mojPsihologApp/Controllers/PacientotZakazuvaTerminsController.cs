@@ -113,7 +113,7 @@ namespace mojPsihologApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("korisnickoime,idTermin")] PacientotZakazuvaTermin pacientotZakazuvaTermin)
+        public async Task<IActionResult> Create([Bind("korisnickoime,idTermin")] PacientotZakazuvaTermin pacientotZakazuvaTermin,Termin termin)
         {
 
             var currentUser = HttpContext.Session.GetString("korisnickoime");
@@ -121,6 +121,11 @@ namespace mojPsihologApp.Controllers
 
             pacientotZakazuvaTermin.KorisnickoimeNavigation = _context.Pacients.Where(p => p.Korisnickoime
               == HttpContext.Session.GetString("korisnickoime")).FirstOrDefault();
+
+            //var termin = await _context.Termins.FindAsync(id);
+
+            //pacientotZakazuvaTermin.idTermin = termin.IdTermin;
+         
 
             var pacient = _context.PacientotZakazuvaTermins.Where(x => x.korisnickoime == currentUser);
 
